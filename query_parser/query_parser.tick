@@ -1,0 +1,8 @@
+stream
+    |from()
+        .measurement('logparser_grok')
+    @queryParser()
+    |influxDBOut()
+        .database('telegraf')
+        .retentionPolicy('default')
+        .measurement('query_param')
