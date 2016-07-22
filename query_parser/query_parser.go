@@ -76,10 +76,10 @@ func (q *queryParserHandler) Point(p *udf.Point) error {
 		newPoint := new(udf.Point)
 		newPoint.Time = p.Time
 		newPoint.Tags = map[string]string{
-			"key": parts[0],
+			"k": parts[0],
 		}
 		newPoint.FieldsString = map[string]string{
-			"value": value,
+			"v": value,
 		}
 
 		q.agent.Responses <- &udf.Response{
